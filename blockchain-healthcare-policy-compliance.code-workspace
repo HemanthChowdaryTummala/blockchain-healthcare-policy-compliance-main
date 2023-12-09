@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../hardhat"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "blockchain-healthcare-policy-compliance"
+	}
+}

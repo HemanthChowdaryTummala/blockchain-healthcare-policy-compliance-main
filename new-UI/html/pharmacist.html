@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Health Guardian Chain</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
+    <div id="loading-overlay" style="display: none;">
+        <div id="loading-spinner"></div>
+    </div>
+    <nav class="navbar navbar-expand-lg bg-info">
+        <a class="navbar-brand text-white" href="#">Health Guardian Chain</a>
+        <button id="logout-button" class="btn btn-danger ml-auto" onclick="logout()" style="display: none;">Logout</button>
+    </nav>
+    <div class="container mt-5">
+        <div id="title" style="display: none;">
+            <hr>
+            <h1 class="text-center" id="title" >Insurance Agent Dashboard</h1>
+            <hr>
+        </div>
+        <div id = "photo" class="container mt-5" style="display: none;">
+            <div class="row">
+                <div class="col text-center">
+                    <img id="image" src="" alt="Your Photo" class="img-fluid" style="width: 200px; height: 200px;">
+                </div>
+            </div>
+        </div>
+        <br>
+    <div id="contents" style="display: none;">
+        <ul class="nav nav-tabs" id="pharmacistTabs" role="tablist" >
+            <li class="nav-item">
+                <a class="nav-link active" id="pharmacistInfo-tab" data-toggle="tab" href="#pharmacistInfo" role="tab" aria-controls="pharmacistInfo" aria-selected="true">Pharmacist Information</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="patientInfo-tab" data-toggle="tab" href="#patientInfo" role="tab" aria-controls="patientInfo" aria-selected="false">Patient Information</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="patientConsent-tab" data-toggle="tab" href="#patientConsent" role="tab" aria-controls="patientConsent" aria-selected="false">Patient Informed Consent</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="insuranceTabContent" > 
+            <div class="tab-pane fade show active" id="pharmacistInfo" role="tabpanel" aria-labelledby="pharmacistInfo-tab">
+                <div id="pharmacist-details-container">
+                </div>
+            </div>
+            <div class="tab-pane fade" id="patientInfo" role="tabpanel" aria-labelledby="patientInfo-tab">
+                <div id="patient-details-container">
+                </div>
+            </div>
+            <div class="tab-pane fade" id="patientConsent" role="tabpanel" aria-labelledby="patientConsent-tab">
+                <div id="consent-details-container">
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="../js/blockchain.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/pharmacist.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+

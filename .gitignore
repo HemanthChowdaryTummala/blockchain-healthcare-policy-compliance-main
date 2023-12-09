@@ -1,0 +1,10 @@
+__pycache__
+.env
+.history
+.hypothesis/
+build/
+reports/
+uml-diagrams/tutorial
+papers/
+Problems-Solutions.md
+requirements-document/healthcare-policy-compliance.pptx

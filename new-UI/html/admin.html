@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Health Guardian Chain</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+    <div id="loading-overlay" style="display: none;">
+        <div id="loading-spinner"></div>
+    </div>
+    <nav class="navbar navbar-expand-lg bg-info">
+        <a class="navbar-brand text-white" href="#">Health Guardian Chain</a>
+        <button id="logout-button" class="btn btn-danger ml-auto" onclick="logout()" style="display: none;">Logout</button>
+    </nav>
+    <div id = "dashboard" style="display: none;" class="container mt-5">
+        <hr>
+        <h1 class="text-center">Admin Dashboard</h1>
+        <hr>
+        <div id = "photo" class="container mt-5" style="display: none;">
+            <div class="row">
+                <div class="col text-center">
+                    <img id="image" src="" alt="Your Photo" class="img-fluid" style="width: 200px; height: 200px;">
+                </div>
+            </div>
+        </div>
+        <br>
+        <ul class="nav nav-tabs" id="adminTabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="tab1-tab" data-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">Patients</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="tab2-tab" data-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">Emergency Contacts</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="tab3-tab" data-toggle="tab" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false">Providers</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="tab4-tab" data-toggle="tab" href="#tab4" role="tab" aria-controls="tab4" aria-selected="false">Insurance Agent</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="tab5-tab" data-toggle="tab" href="#tab5" role="tab" aria-controls="tab5" aria-selected="false">Pharmacists</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="tab6-tab" data-toggle="tab" href="#tab6" role="tab" aria-controls="tab6" aria-selected="false">New User Registration</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="adminTabContent">
+            <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+                <table id="patients-info-table" class="table table-striped table-bordered mt-3">
+                    <thead>
+                        <tr>
+                            <th class="bg-info text-white text-center">Patient ID</th>
+                            <th class="bg-info text-white text-center">First Name</th>
+                            <th class="bg-info text-white text-center">Date of Birth</th>
+                            <th class="bg-info text-white text-center">Gender</th>
+                            <th class="bg-info text-white text-center">Phone</th>
+                            <th class="bg-info text-white text-center">Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Table rows will be generated dynamically by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+                <table id="emergency-contacts-info-table" class="table table-striped table-bordered mt-3">
+                    <thead>
+                        <tr>
+                            <th class="bg-info text-white text-center">Contact ID</th>
+                            <th class="bg-info text-white text-center">Name</th>
+                            <th class="bg-info text-white text-center">Date of Birth</th>
+                            <th class="bg-info text-white text-center">Phone</th>
+                            <th class="bg-info text-white text-center">Email</th>
+                            <th class="bg-info text-white text-center">Patient ID</th>
+                            <th class="bg-info text-white text-center">Relationship</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Table rows will be generated dynamically by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
+                <table id="providers-info-table" class="table table-striped table-bordered mt-3">
+                    <thead>
+                        <tr>
+                            <th class="bg-info text-white text-center">Provider ID</th>
+                            <th class="bg-info text-white text-center">Name</th>
+                            <th class="bg-info text-white text-center">Date of Birth</th>
+                            <th class="bg-info text-white text-center">Title</th>
+                            <th class="bg-info text-white text-center">Phone</th>
+                            <th class="bg-info text-white text-center">Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Table rows will be generated dynamically by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="tab4-tab">
+                <table id="insurance-agent-info-table" class="table table-striped table-bordered mt-3">
+                    <thead>
+                        <tr>
+                            <th class="bg-info text-white text-center">ID</th>
+                            <th class="bg-info text-white text-center">Name</th>
+                            <th class="bg-info text-white text-center">Date of Birth</th>
+                            <th class="bg-info text-white text-center">Title</th>
+                            <th class="bg-info text-white text-center">Company</th>
+                            <th class="bg-info text-white text-center">Phone</th>
+                            <th class="bg-info text-white text-center">Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Table rows will be generated dynamically by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab-pane fade" id="tab5" role="tabpanel" aria-labelledby="tab5-tab">
+                <table id="pharmacist-info-table" class="table table-striped table-bordered mt-3">
+                    <thead>
+                        <tr>
+                            <th class="bg-info text-white text-center">ID</th>
+                            <th class="bg-info text-white text-center">Name</th>
+                            <th class="bg-info text-white text-center">Date of Birth</th>
+                            <th class="bg-info text-white text-center">Title</th>
+                            <th class="bg-info text-white text-center">Company</th>
+                            <th class="bg-info text-white text-center">Phone</th>
+                            <th class="bg-info text-white text-center">Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Table rows will be generated dynamically by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab-pane fade" id="tab6" role="tabpanel" aria-labelledby="tab6-tab">
+                <br><br><br>
+                <div class="container d-flex justify-content-center align-items-center ">
+                    <div class="card p-4" style="width: 400px;">
+                        <h2 class="text-center mb-4">User Registration</h2>
+                            <!-- Common Fields -->
+                            <div class="form-group">
+                                <label for="user-type">User Type</label>
+                                <select class="form-control" id="user-type" name="user-type" onchange="hello()">
+                                    <option value="reset">Please Select a User Type</option>
+                                    <option value="patient">Patient</option>
+                                    <option value="insurance-agent">Insurance Agent</option>
+                                    <option value="pharmacist">Pharmacist</option>
+                                    <option value="provider">Provider</option>
+                                    <option value="emergency-contact">Emergency Contact</option>
+                                </select>
+                            </div>
+                            <div class="form-group" id="id" style="display: none;">
+                                <label for="id">ID</label>
+                                <input id="idv" type="text" class="form-control" name="id">
+                            </div>
+                            <div class="form-group" id="name" style="display: none;">
+                                <label for="name">Name</label>
+                                <input id="namev" type="text" class="form-control"  name="name">
+                            </div>
+                            <div class="form-group" id="dob" style="display: none;">
+                                <label for="dob">Date of Birth</label>
+                                <input id="dobv" type="date" class="form-control"  name="dob">
+                            </div>
+                            <div class="form-group" id="title" style="display: none;">
+                                <label for="title">Title</label>
+                                <input id="titlev" type="text" class="form-control"  name="title">
+                            </div>
+                            <div class="form-group" id="company" style="display: none;">
+                                <label for="company">Company</label>
+                                <input id="companyv" type="text" class="form-control"  name="company">
+                            </div>
+                            <div class="form-group" id="gender" style="display: none;">
+                                <label for="gender">Gender</label>
+                                <select id="genderv" class="form-control"  name="gender">
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group" id="phone" style="display: none;">
+                                <label for="phone">Phone</label>
+                                <input id="phonev" type="tel" class="form-control"  name="phone" required>
+                            </div>
+                            <div class="form-group" id="email" style="display: none;">
+                                <label for="email">Email</label>
+                                <input id="emailv" type="email" class="form-control"  name="email" required>
+                            </div>
+                            <div class="form-group" id="patient-id" style="display: none;">
+                                <label for="patient-id">Patient ID</label>
+                                <input id="patient-idv" type="text" class="form-control"  name="patient-id">
+                            </div>
+                            <div class="form-group" id="relationship" style="display: none;">
+                                <label for="relationship">Relationship</label>
+                                <input id="relationshipv" type="text" class="form-control"  name="relationship">
+                            </div>
+                            <!-- Specific Fields for User Type -->
+                            <!-- Add specific fields for each user type here -->
+            
+                            <button onclick="validateForm()" id="submit-button" class="btn btn-primary" disabled>Register</button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="../js/common.js"></script>
+    <script src="../js/admin.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

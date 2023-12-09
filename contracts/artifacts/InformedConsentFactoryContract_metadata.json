@@ -1,0 +1,464 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_subject",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_action",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_object",
+						"type": "string"
+					}
+				],
+				"name": "addInformedConsentRecord",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_patientID",
+						"type": "string"
+					}
+				],
+				"name": "createOrRetrieveContract",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "contractAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "message",
+						"type": "string"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getAllInformedConsentContracts",
+				"outputs": [
+					{
+						"internalType": "string[]",
+						"name": "patientIDs",
+						"type": "string[]"
+					},
+					{
+						"internalType": "address[]",
+						"name": "contractAddresses",
+						"type": "address[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getAllInformedConsents",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "subject",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "action",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "object",
+								"type": "string"
+							}
+						],
+						"internalType": "struct InformedConsentContract.InformedConsent[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_object",
+						"type": "string"
+					}
+				],
+				"name": "getConsentsByObject",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "subject",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "action",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "object",
+								"type": "string"
+							}
+						],
+						"internalType": "struct InformedConsentContract.InformedConsent[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_subject",
+						"type": "string"
+					}
+				],
+				"name": "getConsentsBySubject",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "subject",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "action",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "object",
+								"type": "string"
+							}
+						],
+						"internalType": "struct InformedConsentContract.InformedConsent[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getConsentsForRead",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "subject",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "action",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "object",
+								"type": "string"
+							}
+						],
+						"internalType": "struct InformedConsentContract.InformedConsent[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getConsentsForUpdate",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "subject",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "action",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "object",
+								"type": "string"
+							}
+						],
+						"internalType": "struct InformedConsentContract.InformedConsent[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getConsentsForWrite",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "subject",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "action",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "object",
+								"type": "string"
+							}
+						],
+						"internalType": "struct InformedConsentContract.InformedConsent[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_patientID",
+						"type": "string"
+					}
+				],
+				"name": "getPatientContractAddress",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "patientID",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "patientContractAddress",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "patientId",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_newPatientId",
+						"type": "string"
+					}
+				],
+				"name": "setPatientId",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "This contract allows for the creation of new InformedConsentContract instances and provides lookup functionality by patient ID.",
+			"kind": "dev",
+			"methods": {
+				"addInformedConsentRecord(string,string,string)": {
+					"details": "Adds a new InformedConsent record.",
+					"params": {
+						"_action": "The action of the consent.",
+						"_object": "The object of the consent.",
+						"_subject": "The subject of the consent."
+					}
+				},
+				"createOrRetrieveContract(string)": {
+					"details": "Iterates through `patientContracts` to check if a contract exists for the given patient ID. If it exists, returns the address and a message. If not, creates a new contract.",
+					"params": {
+						"_patientID": "Unique identifier for a patient."
+					},
+					"returns": {
+						"contractAddress": "The address of the contract.",
+						"message": "A message indicating the action performed."
+					}
+				},
+				"getAllInformedConsentContracts()": {
+					"details": "Retrieve all stored patient IDs and their associated contract addresses.",
+					"returns": {
+						"contractAddresses": "An array of all stored contract addresses.",
+						"patientIDs": "An array of all stored patient IDs."
+					}
+				},
+				"getAllInformedConsents()": {
+					"details": "Retrieve all InformedConsent records.",
+					"returns": {
+						"_0": "An array of all stored InformedConsent records."
+					}
+				},
+				"getConsentsByObject(string)": {
+					"details": "Retrieve all InformedConsent records with a specific object.",
+					"params": {
+						"_object": "The object to be matched."
+					},
+					"returns": {
+						"_0": "An array of all matching InformedConsent records."
+					}
+				},
+				"getConsentsBySubject(string)": {
+					"details": "Retrieve all InformedConsent records with a specific subject.",
+					"params": {
+						"_subject": "The subject to be matched."
+					},
+					"returns": {
+						"_0": "An array of all matching InformedConsent records."
+					}
+				},
+				"getConsentsForRead()": {
+					"details": "Retrieve all consents for reading action.",
+					"returns": {
+						"_0": "An array of all consents with action type 'Read'."
+					}
+				},
+				"getConsentsForUpdate()": {
+					"details": "Retrieve all consents for updating action.",
+					"returns": {
+						"_0": "An array of all consents with action type 'Update'."
+					}
+				},
+				"getConsentsForWrite()": {
+					"details": "Retrieve all consents for writing action.",
+					"returns": {
+						"_0": "An array of all consents with action type 'Write'."
+					}
+				},
+				"getPatientContractAddress(string)": {
+					"details": "Retrieve the patient ID and contract address for a specific patient using their ID.",
+					"params": {
+						"_patientID": "The ID of the patient to retrieve the contract address for."
+					},
+					"returns": {
+						"patientContractAddress": "The address of the deployed patient contract.",
+						"patientID": "The ID of the patient."
+					}
+				},
+				"setPatientId(string)": {
+					"details": "Allows the owner to set a patient ID.",
+					"params": {
+						"_newPatientId": "The ID to be set for the patient."
+					}
+				}
+			},
+			"title": "InformedConsentFactoryContract",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"createOrRetrieveContract(string)": {
+					"notice": "Create or retrieve the patient's informed consent contract."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"InformedConsentFactory.sol": "InformedConsentFactoryContract"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"InformedConsent.sol": {
+			"keccak256": "0x9eef6daa648929940609c04b2904b36919942703bfeeb802d321f8f5014fb547",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://904baac68698d11f8739e3183bf5f32d37f5e11297463813ee9b5b358c563600",
+				"dweb:/ipfs/QmUKtGkcpYzXNwRuUPkFwtcw6v57PHEDHDEm46E2AqZXPd"
+			]
+		},
+		"InformedConsentFactory.sol": {
+			"keccak256": "0x8a4595c2ac26a8913ff6e1a0de0e6821fc06f30839b9a355e09f1dbaaf5d154f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://013217fe41bee891abb29e138352724d1916a45376203e5053b974d9227bbb9e",
+				"dweb:/ipfs/QmRTFafShgNmxY88mX3FEELZZZdTwpg8CFrMEqNjfpU5ED"
+			]
+		}
+	},
+	"version": 1
+}

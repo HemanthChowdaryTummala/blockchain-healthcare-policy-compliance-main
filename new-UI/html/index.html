@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Health Guardian Chain</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand text-white" href="#">Health Guardian Chain</a>
+    </nav>
+
+    <!-- Button Container -->
+    <div class="container mt-5">
+        <hr>
+        <h1 class="text-center">Welcome to the Health Guardian Chain</h1>
+        <hr>
+        <br><br>
+        <div class="text-center mt-3">
+            <img src="../resources/home.png" alt="Your Image" style="width: 600px; height: auto;">
+        </div>
+        <br><br>
+
+        <!-- Login Form -->
+        <div id="login-form" class="login-form mt-5">
+            <div class="alert alert-danger alert-dismissible fade show" id="login-alert" role="alert">
+                Invalid ID or password. Please try again.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="patient-login-form">
+                <div class="form-group">
+                    <label for="patient-id">ID</label>
+                    <input type="text" class="form-control" id="patient-id" placeholder="Enter ID">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Password">
+                </div>
+                <div class="text-center">
+                    <button type="button" id="login-button" class="btn btn-primary">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

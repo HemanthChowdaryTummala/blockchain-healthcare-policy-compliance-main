@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Health Guardian Chain</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg bg-info">
+    <a class="navbar-brand text-white" href="#">Health Guardian Chain</a>
+    <button id="logout-button" class="btn btn-danger ml-auto" onclick="logout()" style="display: none;">Logout</button>
+</nav>
+<div id="login-form" class="container mt-5">
+    <div class="alert alert-danger alert-dismissible fade show" id="login-alert" role="alert" style="display: none;">
+        Invalid patient ID or password. Please try again.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <br>
+    <form id="patient-login-form">
+        <div class="form-group">
+            <label for="patient-id">Admin ID</label>
+            <input type="text" class="form-control" id="patient-id" placeholder="Enter Admin ID">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Password">
+        </div>
+        <button type="button" class="btn btn-primary" id="login-button">Login</button>
+    </form>
+</div>
+<!-- Admin Dashboard Tabs -->
+<div id = "dashboard" style="display: none;" class="container mt-5">
+    <hr>
+    <h1 class="text-center">Admin Dashboard</h1>
+    <hr>
+    <div id = "photo" class="container mt-5" style="display: none;">
+        <div class="row">
+            <div class="col text-center">
+                <img id="image" src="home.png" alt="Your Photo" class="img-fluid" style="width: 200px; height: 200px;">
+            </div>
+        </div>
+    </div>
+    <br>
+    <ul class="nav nav-tabs" id="adminTabs" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="tab1-tab" data-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">Patients</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="tab2-tab" data-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">Emergency Contacts</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="tab3-tab" data-toggle="tab" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false">Providers</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="tab4-tab" data-toggle="tab" href="#tab4" role="tab" aria-controls="tab4" aria-selected="false">Insurance Agent</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="tab5-tab" data-toggle="tab" href="#tab5" role="tab" aria-controls="tab5" aria-selected="false">Pharmacists</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="adminTabContent">
+        <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+            <table id="patients-info-table" class="table table-striped table-bordered mt-3">
+                <thead>
+                    <tr>
+                        <th class="bg-info text-white text-center">Patient ID</th>
+                        <th class="bg-info text-white text-center">First Name</th>
+                        <th class="bg-info text-white text-center">Date of Birth</th>
+                        <th class="bg-info text-white text-center">Gender</th>
+                        <th class="bg-info text-white text-center">Phone</th>
+                        <th class="bg-info text-white text-center">Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Table rows will be generated dynamically by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+        <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+            <table id="emergency-contacts-info-table" class="table table-striped table-bordered mt-3">
+                <thead>
+                    <tr>
+                        <th class="bg-info text-white text-center">Contact ID</th>
+                        <th class="bg-info text-white text-center">Name</th>
+                        <th class="bg-info text-white text-center">Date of Birth</th>
+                        <th class="bg-info text-white text-center">Phone</th>
+                        <th class="bg-info text-white text-center">Email</th>
+                        <th class="bg-info text-white text-center">Patient ID</th>
+                        <th class="bg-info text-white text-center">Relationship</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Table rows will be generated dynamically by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+        <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
+            <table id="providers-info-table" class="table table-striped table-bordered mt-3">
+                <thead>
+                    <tr>
+                        <th class="bg-info text-white text-center">Provider ID</th>
+                        <th class="bg-info text-white text-center">Name</th>
+                        <th class="bg-info text-white text-center">Date of Birth</th>
+                        <th class="bg-info text-white text-center">Title</th>
+                        <th class="bg-info text-white text-center">Phone</th>
+                        <th class="bg-info text-white text-center">Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Table rows will be generated dynamically by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+        <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="tab4-tab">
+            <table id="insurance-agent-info-table" class="table table-striped table-bordered mt-3">
+                <thead>
+                    <tr>
+                        <th class="bg-info text-white text-center">ID</th>
+                        <th class="bg-info text-white text-center">Name</th>
+                        <th class="bg-info text-white text-center">Date of Birth</th>
+                        <th class="bg-info text-white text-center">Title</th>
+                        <th class="bg-info text-white text-center">Company</th>
+                        <th class="bg-info text-white text-center">Phone</th>
+                        <th class="bg-info text-white text-center">Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Table rows will be generated dynamically by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+        <div class="tab-pane fade" id="tab5" role="tabpanel" aria-labelledby="tab5-tab">
+            <table id="pharmacist-info-table" class="table table-striped table-bordered mt-3">
+                <thead>
+                    <tr>
+                        <th class="bg-info text-white text-center">ID</th>
+                        <th class="bg-info text-white text-center">Name</th>
+                        <th class="bg-info text-white text-center">Date of Birth</th>
+                        <th class="bg-info text-white text-center">Title</th>
+                        <th class="bg-info text-white text-center">Company</th>
+                        <th class="bg-info text-white text-center">Phone</th>
+                        <th class="bg-info text-white text-center">Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Table rows will be generated dynamically by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="admin.js"></script>
+<script src="common.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
